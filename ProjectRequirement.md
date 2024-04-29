@@ -119,3 +119,41 @@
 
 
 </table>
+
+## Controllers
+### Vehicle Controllers
+    - Create Vehicle    | @PostMapping("/vehicles")
+    - Update Vehicle    | @PostMapping("/vehicles")
+    - Delete Vehicle    | @DeleteMapping("/vehicles/{id}")
+    - Get Vehicle By Id | @GetMapping("/vehicles/{id}")
+    - Get All Vehicles  | @GetMapping("/vehicles")
+
+### Customer Controllers
+    - Create Customer       | @PostMapping("/customers")
+    - Update Customer       | @PostMapping("/customers")
+    - Delete Customer       | @DeleteMapping("/customers/{id}")
+    - Get Customer By Id    | @GetMapping("/customers/{id}")
+    - Get All Customers     | @GetMapping("/customers")
+
+### Service Record Controllers
+    - Create Service Record     | @PostMapping("/service-records")
+    - Update Service Record     | @PostMapping("/service-records")
+    - Delete Service Record     | @DeleteMapping("/service-records/{id}")
+    - Get Service Record By Id  | @GetMapping("/service-records/{id}")
+    - Get All Service Records   | @GetMapping("/service-records")
+
+### Service Provider Controllers
+    - Create Service Provider   | @PostMapping("/service-providers")
+    - Update Service Provider   | @PostMapping("/service-providers")
+    - Delete Service Provider   | @DeleteMapping("/service-providers/{id}")
+    - Get Service Provider      | @GetMapping("/service-providers/{id}")
+    - Get All Service Providers | @GetMapping("/service-providers")
+
+### Service Type Controllers
+    - Create Service Type       | @PostMapping("/service-types")
+    - Update Service Type       | @PostMapping("/service-types")
+    - Delete Service Type       | @DeleteMapping("/service-types/{id}")
+    - Get Service Type          | @GetMapping("/service-types/{id}")
+    - Get All Service Types     | @GetMapping("/service-types")
+
+
