@@ -13,7 +13,7 @@
         <th>Model</th>
         <th>Attributes</th>
         <th>Data Type</th>
-        <th>Additional Details</th>
+        <th>Cardinality</th>
     </tr>
     <tr>
         <td rowspan="5"  style="background-color: grey">Vehicle</td>
