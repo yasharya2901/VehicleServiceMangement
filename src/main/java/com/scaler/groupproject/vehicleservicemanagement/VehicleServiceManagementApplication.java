@@ -1,4 +1,4 @@
-package com.scaler.groupproject.vehicleservicemangement;
+package com.scaler.groupproject.vehicleservicemanagement;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
