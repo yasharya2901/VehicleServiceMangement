@@ -10,7 +10,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Vehicle {
-    private Vehicle vehicle;
+    private Long vehicleId;
     private String company;
     private String model;
     private String year;
