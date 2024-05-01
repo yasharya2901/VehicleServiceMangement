@@ -18,5 +18,4 @@ public interface ServiceTypeRepository  extends JpaRepository<ServiceType, Long>
 
     ServiceType save(ServiceType serviceType);
 
-
 }
