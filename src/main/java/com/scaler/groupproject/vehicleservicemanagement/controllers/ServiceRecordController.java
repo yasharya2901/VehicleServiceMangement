@@ -10,7 +10,7 @@ import java.util.List;
 @RequestMapping("/service-records/")
 public class ServiceRecordController {
     @GetMapping("/{id}")
-    public String getServiceRecordById(@PathVariable Long id) {
+    public ServiceRecord getServiceRecordById(@PathVariable Long id) {
         return null;
     }
 
