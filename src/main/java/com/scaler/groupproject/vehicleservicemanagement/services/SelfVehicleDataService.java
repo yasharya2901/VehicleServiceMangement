@@ -12,8 +12,7 @@ import java.util.Optional;
 @Service("selfVehicleDataService")
 public class SelfVehicleDataService implements VehicleDataService{
     VehicleRepository vehicleRepository;
-    SelfVehicleDataService(VehicleRepository vehicleRepository)
-    {
+    SelfVehicleDataService(VehicleRepository vehicleRepository) {
         this.vehicleRepository = vehicleRepository;
     }
 
@@ -24,7 +23,11 @@ public class SelfVehicleDataService implements VehicleDataService{
 
     @Override
     public List<Vehicle> getAllVehicles() {
-        return vehicleRepository.findAll();
+        List<Vehicle> vehicleList = vehicleRepository.findAll();
+        if (vehicleList.isEmpty()) {
+            throw new VehicleNotFoundException("No Vehicles found", null);
+        }
+        return vehicleList;
     }
 
     @Override
