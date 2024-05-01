@@ -9,17 +9,17 @@ import java.util.List;
 @RequestMapping("/vehicles")
 public class VehicleController {
 
-    @RequestMapping("/{id}")
+    @GetMapping("/{id}")
     public Vehicle getVehicleById(@PathVariable Long id) {
         return null;
     }
 
-    @RequestMapping
+    @GetMapping
     public List<Vehicle> getAllVehicles() {
         return null;
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public Vehicle deleteVehicleById(@PathVariable Long id) {
         return null;
     }
