@@ -16,7 +16,7 @@ public interface ServiceTypeRepository  extends JpaRepository<ServiceType, Long>
 
     void deleteById(Long id);
 
-    Optional<ServiceType> save(ServiceType serviceType);
+    ServiceType save(ServiceType serviceType);
 
 
 }
