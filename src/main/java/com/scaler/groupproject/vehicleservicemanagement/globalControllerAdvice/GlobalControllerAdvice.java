@@ -13,7 +13,7 @@ public class GlobalControllerAdvice {
     public ResponseEntity<ExceptionDto> handleVehicleNotFoundException(VehicleNotFoundException exp) {
         ExceptionDto dto = new ExceptionDto();
         dto.setResolution(exp.getMessage());
-        dto.setMessage("Invalid productId " + exp.getId() + " passed");
+        dto.setMessage("Vehicle not found! Please check your vehicle id: " + exp.getId());
         return new ResponseEntity<>(dto, HttpStatus.BAD_REQUEST);
     }
 
@@ -21,7 +21,7 @@ public class GlobalControllerAdvice {
     public ResponseEntity<ExceptionDto> handleCustomerNotFoundException(CustomerNotFoundException exp) {
         ExceptionDto dto = new ExceptionDto();
         dto.setResolution(exp.getMessage());
-        dto.setMessage("Customer not found");
+        dto.setMessage("Customer not found! Please check your customer id: "+ exp.getId());
         return new ResponseEntity<>(dto, HttpStatus.NOT_FOUND);
     }
 
@@ -29,7 +29,7 @@ public class GlobalControllerAdvice {
     public ResponseEntity<ExceptionDto> handleDuplicateRecordException(DuplicateRecordException exp) {
         ExceptionDto dto = new ExceptionDto();
         dto.setResolution(exp.getMessage());
-        dto.setMessage("Duplicate record");
+        dto.setMessage("Duplicate record! This record already exists");
         return new ResponseEntity<>(dto, HttpStatus.CONFLICT);
     }
 
@@ -37,7 +37,7 @@ public class GlobalControllerAdvice {
     public ResponseEntity<ExceptionDto> handleResourceNotFoundException(ResourceNotFoundException exp) {
         ExceptionDto dto = new ExceptionDto();
         dto.setResolution(exp.getMessage());
-        dto.setMessage("Resource not found");
+        dto.setMessage("Resource not found! Please check your resource id: "+exp.getId());
         return new ResponseEntity<>(dto, HttpStatus.NOT_FOUND);
     }
 
@@ -45,7 +45,7 @@ public class GlobalControllerAdvice {
     public ResponseEntity<ExceptionDto> handleServiceProviderNotFoundException(ServiceProviderNotFoundException exp) {
         ExceptionDto dto = new ExceptionDto();
         dto.setResolution(exp.getMessage());
-        dto.setMessage("Service provider not found");
+        dto.setMessage("Service provider not found! Please check your service provider id: "+exp.getId());
         return new ResponseEntity<>(dto, HttpStatus.NOT_FOUND);
     }
 
@@ -53,7 +53,7 @@ public class GlobalControllerAdvice {
     public ResponseEntity<ExceptionDto> handleServiceRecordNotFoundException(ServiceRecordNotFoundException exp) {
         ExceptionDto dto = new ExceptionDto();
         dto.setResolution(exp.getMessage());
-        dto.setMessage("Service record not found");
+        dto.setMessage("Service record not found! Please check your service record id: "+exp.getId());
         return new ResponseEntity<>(dto, HttpStatus.NOT_FOUND);
     }
 
@@ -61,7 +61,7 @@ public class GlobalControllerAdvice {
     public ResponseEntity<ExceptionDto> handleServiceTypeNotFoundException(ServiceTypeNotFoundException exp) {
         ExceptionDto dto = new ExceptionDto();
         dto.setResolution(exp.getMessage());
-        dto.setMessage("Service type not found");
+        dto.setMessage("Service type not found! Please check your service type id: "+exp.getId());
         return new ResponseEntity<>(dto, HttpStatus.NOT_FOUND);
     }
 }
