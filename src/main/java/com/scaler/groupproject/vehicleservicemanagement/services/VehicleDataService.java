@@ -10,4 +10,5 @@ public interface VehicleDataService {
     public List<Vehicle> getAllVehicles();
     public Vehicle getVehicleById(Long id);
     public Vehicle deleteVehicleById(Long id);
+    public Vehicle updateVehicle(Vehicle vehicle, Long id);
 }

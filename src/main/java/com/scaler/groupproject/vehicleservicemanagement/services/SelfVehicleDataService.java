@@ -1,8 +1,11 @@
 package com.scaler.groupproject.vehicleservicemanagement.services;
 
+import com.scaler.groupproject.vehicleservicemanagement.exceptions.AccessDeniedException;
 import com.scaler.groupproject.vehicleservicemanagement.exceptions.VehicleNotFoundException;
+import com.scaler.groupproject.vehicleservicemanagement.models.Customer;
 import com.scaler.groupproject.vehicleservicemanagement.models.Vehicle;
 import com.scaler.groupproject.vehicleservicemanagement.repositories.VehicleRepository;
+import jakarta.persistence.ManyToOne;
 import org.springframework.stereotype.Service;
 
 import java.sql.SQLOutput;
@@ -44,4 +47,18 @@ public class SelfVehicleDataService implements VehicleDataService{
         vehicleRepository.deleteById(id);
         return vehicle;
     }
+    @Override
+    public Vehicle updateVehicle(Vehicle vehicle, Long id) {
+        Vehicle vehicle1 = getVehicleById(id);
+
+        if (vehicle1.getOwner() != null && !vehicle1.getOwner().equals(vehicle.getOwner())) {
+            throw new AccessDeniedException("Cannot change ownership details");
+        }
+        vehicle1.setVehicleId(vehicle.getVehicleId());
+        vehicle1.setCompany(vehicle.getCompany());
+        vehicle1.setModel(vehicle.getModel());
+        vehicle1.setYear(vehicle.getYear());
+        return vehicleRepository.save(vehicle1);
+    }
 }
+
