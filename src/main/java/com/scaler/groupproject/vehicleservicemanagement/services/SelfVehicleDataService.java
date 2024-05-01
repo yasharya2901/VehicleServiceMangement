@@ -5,6 +5,7 @@ import com.scaler.groupproject.vehicleservicemanagement.models.Vehicle;
 import com.scaler.groupproject.vehicleservicemanagement.repositories.VehicleRepository;
 import org.springframework.stereotype.Service;
 
+import java.sql.SQLOutput;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,13 +19,12 @@ public class SelfVehicleDataService implements VehicleDataService{
 
     @Override
     public Vehicle createVehicle (Vehicle vehicle) {
-        return null;
+        return vehicleRepository.save(vehicle);
     }
 
     @Override
     public List<Vehicle> getAllVehicles() {
-        List<Vehicle> vehicleList = vehicleRepository.findAll();
-        return vehicleList;
+        return vehicleRepository.findAll();
     }
 
     @Override
@@ -40,6 +40,8 @@ public class SelfVehicleDataService implements VehicleDataService{
 
     @Override
     public Vehicle deleteVehicleById(Long id) {
-        return null;
+        Vehicle vehicle = getVehicleById(id);
+        vehicleRepository.deleteById(id);
+        return vehicle;
     }
 }
