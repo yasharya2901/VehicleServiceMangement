@@ -1,6 +1,7 @@
 package com.scaler.groupproject.vehicleservicemanagement.controllers;
 
 import com.scaler.groupproject.vehicleservicemanagement.models.Vehicle;
+import com.scaler.groupproject.vehicleservicemanagement.services.VehicleDataService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -8,25 +9,29 @@ import java.util.List;
 @RestController
 @RequestMapping("/vehicles")
 public class VehicleController {
-
+    VehicleDataService vehicleDataService;
+    VehicleController(VehicleDataService vehicleDataService)
+    {
+        this.vehicleDataService=vehicleDataService;
+    }
     @GetMapping("/{id}")
     public Vehicle getVehicleById(@PathVariable Long id) {
-        return null;
+        return vehicleDataService.getVehicleById(id);
     }
 
     @GetMapping
     public List<Vehicle> getAllVehicles() {
-        return null;
+        return vehicleDataService.getAllVehicles();
     }
 
     @DeleteMapping("/{id}")
     public Vehicle deleteVehicleById(@PathVariable Long id) {
-        return null;
+        return vehicleDataService.deleteVehicleById(id);
     }
 
     @PostMapping
     public Vehicle createVehicle(@RequestBody Vehicle vehicle) {
-        return null;
+        return vehicleDataService.createVehicle(vehicle);
     }
 
 }
