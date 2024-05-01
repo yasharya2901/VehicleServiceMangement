@@ -21,6 +21,6 @@ public class ServiceRecord {
     @ManyToMany
     private List<ServiceType> serviceType;
     private int dateOfService;
-    @OneToMany
+    @ManyToMany
     private List<ServiceProvider> serviceProvider;
 }
