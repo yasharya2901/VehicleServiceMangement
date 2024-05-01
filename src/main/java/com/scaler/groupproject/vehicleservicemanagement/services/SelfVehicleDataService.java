@@ -51,7 +51,7 @@ public class SelfVehicleDataService implements VehicleDataService{
     public Vehicle updateVehicle(Vehicle vehicle, Long id) {
         Vehicle vehicle1 = getVehicleById(id);
 
-        if (vehicle1.getOwner() != null && !vehicle1.getOwner().equals(vehicle.getOwner())) {
+        if (vehicle1.getOwner() != null && !vehicle1.getOwner().getName().equals(vehicle.getOwner().getName())) {
             throw new AccessDeniedException("Cannot change ownership details");
         }
         vehicle1.setVehicleId(vehicle.getVehicleId());
