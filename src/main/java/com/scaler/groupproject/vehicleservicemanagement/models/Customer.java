@@ -1,27 +1,22 @@
 package com.scaler.groupproject.vehicleservicemanagement.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.List;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 public class Customer {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long customerId;
     private String name;
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     private List<Vehicle> vehicle;
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     private List<ServiceRecord> serviceRecord;
 
 }
