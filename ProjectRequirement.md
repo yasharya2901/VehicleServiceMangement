@@ -21,7 +21,7 @@
         <td>Long</td>
     </tr>
     <tr>
-        <td>make</td>
+        <td>company</td>
         <td>String</td>
     </tr>
     <tr>
