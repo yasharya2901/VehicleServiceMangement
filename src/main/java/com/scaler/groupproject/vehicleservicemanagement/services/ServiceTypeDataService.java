@@ -5,8 +5,8 @@ import com.scaler.groupproject.vehicleservicemanagement.models.ServiceType;
 import java.util.List;
 
 public interface ServiceTypeDataService {
-    public ServiceType getServiceRecordById(Long id);
-    public List<ServiceType> getAllServiceRecords();
-    public ServiceType deleteServiceRecordById(Long id);
-    public ServiceType createServiceRecord(ServiceType serviceType);
+    ServiceType getServiceTypeById(Long id);
+    List<ServiceType> getAllServiceTypes();
+    ServiceType deleteServiceTypeById(Long id);
+    ServiceType createServiceType(ServiceType serviceType);
 }
