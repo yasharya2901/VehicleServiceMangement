@@ -1,6 +1,7 @@
 package com.scaler.groupproject.vehicleservicemanagement.models;
 
 import jakarta.persistence.*;
+import jakarta.persistence.criteria.Fetch;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,7 +19,7 @@ public class ServiceProvider {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long serviceProviderId;
     private String serviceProviderName;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<ServiceType> serviceType;
     private String contactNumber;
 }

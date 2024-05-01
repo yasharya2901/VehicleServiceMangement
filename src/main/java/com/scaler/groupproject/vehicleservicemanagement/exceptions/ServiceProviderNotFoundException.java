@@ -7,8 +7,11 @@ import lombok.Setter;
 @Setter
 public class ServiceProviderNotFoundException extends RuntimeException {
     private Long id;
+    public ServiceProviderNotFoundException(String message, Long id) {
+        super(message);
+        this.id = this.id;
+    }
     public ServiceProviderNotFoundException(String message) {
         super(message);
-        this.id = id;
     }
 }

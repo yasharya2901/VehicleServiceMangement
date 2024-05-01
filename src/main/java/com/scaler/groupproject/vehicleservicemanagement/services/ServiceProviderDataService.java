@@ -1,7 +1,6 @@
 package com.scaler.groupproject.vehicleservicemanagement.services;
 
 import com.scaler.groupproject.vehicleservicemanagement.models.ServiceProvider;
-import com.scaler.groupproject.vehicleservicemanagement.models.ServiceRecord;
 
 import java.util.List;
 
