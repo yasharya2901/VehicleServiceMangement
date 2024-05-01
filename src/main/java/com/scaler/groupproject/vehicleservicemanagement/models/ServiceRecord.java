@@ -15,12 +15,13 @@ import java.util.List;
 @Entity
 public class ServiceRecord {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long serviceRecordId;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private Vehicle vehicle;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<ServiceType> serviceType;
     private int dateOfService;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<ServiceProvider> serviceProvider;
 }
