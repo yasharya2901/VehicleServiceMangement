@@ -64,4 +64,12 @@ public class GlobalControllerAdvice {
         dto.setResolution("Service type not found! Please check your service type id: "+exp.getId());
         return new ResponseEntity<>(dto, HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ExceptionDto> handleGeneralException(Exception exp) {
+        ExceptionDto dto = new ExceptionDto();
+        dto.setMessage("Something went wrong!");
+        dto.setResolution("Please try again later.");
+        return new ResponseEntity<>(dto, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 }
