@@ -329,6 +329,8 @@ The project is organized into the following packages:
 - **Models and Controllers**: Om Wagchavre and Yash
 - **Exceptions and Controller Advice**: Ruthwik and Loukik
 - **Services**:  Deepti, Loukik, Ruthwik, Loukik, Yash, Jash
+- **Repositories**: Ruthwik
+- **Database**: Yash and Jash
 
 ## Contribution
 
