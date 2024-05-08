@@ -2,6 +2,8 @@ package com.scaler.groupproject.vehicleservicemanagement.controllers;
 
 import com.scaler.groupproject.vehicleservicemanagement.models.ServiceType;
 import com.scaler.groupproject.vehicleservicemanagement.services.ServiceTypeDataService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/service-type")
 public class ServiceTypeController {
+    private Logger logger = LoggerFactory.getLogger(CustomerController.class);
     private ServiceTypeDataService serviceTypeDataService;
 
     public ServiceTypeController(ServiceTypeDataService serviceTypeDataService) {
@@ -27,6 +30,7 @@ public class ServiceTypeController {
 
     @DeleteMapping("/{id}")
     public ServiceType deleteServiceTypeById(@PathVariable Long id) {
+        logger.info("Deleting ServiceType with id: " + id);
         return serviceTypeDataService.deleteServiceTypeById(id);
     }
 

@@ -2,6 +2,8 @@ package com.scaler.groupproject.vehicleservicemanagement.controllers;
 
 import com.scaler.groupproject.vehicleservicemanagement.models.Vehicle;
 import com.scaler.groupproject.vehicleservicemanagement.services.VehicleDataService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/vehicles")
 public class VehicleController {
+    private Logger logger = LoggerFactory.getLogger(CustomerController.class);
     VehicleDataService vehicleDataService;
     VehicleController(VehicleDataService vehicleDataService)
     {
@@ -26,6 +29,7 @@ public class VehicleController {
 
     @DeleteMapping("/{id}")
     public Vehicle deleteVehicleById(@PathVariable Long id) {
+        logger.info("Deleting Vehicle with id: " + id);
         return vehicleDataService.deleteVehicleById(id);
     }
 

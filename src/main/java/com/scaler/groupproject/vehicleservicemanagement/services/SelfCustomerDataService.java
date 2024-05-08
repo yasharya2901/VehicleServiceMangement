@@ -1,8 +1,11 @@
 package com.scaler.groupproject.vehicleservicemanagement.services;
 
+import com.scaler.groupproject.vehicleservicemanagement.controllers.CustomerController;
 import com.scaler.groupproject.vehicleservicemanagement.exceptions.CustomerNotFoundException;
 import com.scaler.groupproject.vehicleservicemanagement.models.Customer;
 import com.scaler.groupproject.vehicleservicemanagement.repositories.CustomerRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,6 +13,7 @@ import java.util.Optional;
 
 @Service
 public class SelfCustomerDataService implements CustomerDataService{
+    private Logger logger = LoggerFactory.getLogger(CustomerController.class);
     private final CustomerRepository customerRepository;
     public SelfCustomerDataService(CustomerRepository customerRepository){
         this.customerRepository = customerRepository;
@@ -35,6 +39,7 @@ public class SelfCustomerDataService implements CustomerDataService{
     @Override
     public Customer deleteCustomerById(Long id)
     {
+        logger.info("Deleting customer with id: " + id);
         Customer customer = getCustomerById(id);
 //        System.out.println(customer);
         customerRepository.deleteById(id);

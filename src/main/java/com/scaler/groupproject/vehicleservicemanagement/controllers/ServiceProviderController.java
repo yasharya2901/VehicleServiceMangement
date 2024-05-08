@@ -5,6 +5,8 @@ import com.scaler.groupproject.vehicleservicemanagement.models.ServiceProvider;
 import com.scaler.groupproject.vehicleservicemanagement.models.ServiceRecord;
 import com.scaler.groupproject.vehicleservicemanagement.services.ServiceProviderDataService;
 import com.scaler.groupproject.vehicleservicemanagement.services.ServiceTypeDataService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,7 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/service-providers")
 public class ServiceProviderController {
-
+    private Logger logger = LoggerFactory.getLogger(CustomerController.class);
     private ServiceProviderDataService serviceProviderDataService;
     ServiceProviderController(ServiceProviderDataService serviceProviderDataService){
         this.serviceProviderDataService = serviceProviderDataService;
@@ -30,6 +32,7 @@ public class ServiceProviderController {
 
     @DeleteMapping("/{id}")
     public ServiceProvider deleteServiceProviderById(@PathVariable Long id) {
+        logger.info("Deleting ServiceProvider with id: " + id);
          return serviceProviderDataService.deleteServiceProviderById(id);
 
 
