@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RestController
 @RequestMapping("/vehicles")
 public class VehicleController {
@@ -38,4 +39,8 @@ public class VehicleController {
         return vehicleDataService.createVehicle(vehicle);
     }
 
+    @PutMapping("/{id}")
+    public Vehicle updateVehicle(@RequestBody Vehicle vehicle, @PathVariable Long id) {
+        return vehicleDataService.updateVehicle(vehicle, id);
+    }
 }
